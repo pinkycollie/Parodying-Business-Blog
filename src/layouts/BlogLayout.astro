@@ -1,0 +1,44 @@
+---
+import Layout from './Layout.astro';
+const { frontmatter } = Astro.props;
+---
+
+<Layout>
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <article class="prose lg:prose-xl">
+      <h1>{frontmatter.title}</h1>
+      {frontmatter.date && (
+        <time datetime={frontmatter.date} class="text-gray-600">
+          {new Date(frontmatter.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </time>
+      )}
+      <slot />
+    </article>
+  </main>
+
+  <!-- Newsletter Signup -->
+  <div class="bg-gray-50 py-12 mt-8">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+        <p class="mb-4">Stay updated with the latest business insights for deaf entrepreneurs.</p>
+        <!-- Beehive Newsletter Integration -->
+        <div id="beehiiv-embed"></div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Beehive Newsletter Integration
+  window.addEventListener('load', function() {
+    const script = document.createElement('script');
+    script.src = 'YOUR_BEEHIVE_EMBED_URL'; // Replace with your Beehive embed URL
+    script.async = true;
+    document.body.appendChild(script);
+  });
+</script>

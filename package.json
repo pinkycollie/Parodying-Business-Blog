@@ -1,0 +1,26 @@
+{
+  "name": "mbtq-universe-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "5.2.5",
+    "@astrojs/tailwind": "5.1.0",
+    "@astrojs/mdx": "2.1.1",
+    "tailwindcss": "3.4.1",
+    "@tailwindcss/typography": "0.5.10",
+    "date-fns": "3.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.19"
+  },
+  "engines": {
+    "node": ">=18.14.1"
+  }
+}
